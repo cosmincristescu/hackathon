@@ -1,0 +1,102 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'homepage/vendor1/bootstrap/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'homepage/fonts1/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'homepage/fonts1/iconic/css/material-design-iconic-font.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'homepage/vendor1/animate/animate.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'homepage/vendor1/css-hamburgers/hamburgers.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'homepage/vendor1/animsition/css/animsition.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'homepage/vendor1/select2/select2.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'homepage/vendor1/daterangepicker/daterangepicker.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'homepage/css1/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'homepage/css1/main.css' %}">
+</head>
+<body>
+
+
+	<div class="container-contact100">
+
+		<div class="wrap-contact100">
+			<form id="expenses_form" method="POST">
+				{% csrf_token %}
+				<div style="display:table;">
+					<div class="wrap-input100" data-validate="" style="display: table-cell; width: 70%;box-shadow: 60px">
+						<input class="input100" type="text" name="what_expense" autocomplete="off" placeholder="Spent on...">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100" data-validate = "" style="display: table-cell;">
+						<input class="input100" type="text" name="amount_expense" autocomplete="off" placeholder="$0.00">
+						<span class="focus-input100"></span>
+					</div>
+				</div>
+				
+				<div class="wrap-input100" style="margin-top: 20px; margin-bottom: 20px; margin-left: auto; margin-right: auto; width: 50%">
+					<input class="input100" type="text" name="date_expense" placeholder="Date" onfocus="(this.type='date')" onblur="(this.type='text')" style="color: #989898;  padding: 20px; text-align: center;">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100" style="margin-top:20px;">
+					<textarea class="input100" name="message_expense" placeholder="Observations..."></textarea>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="container-contact100-form-btn">
+					<button class="contact100-form-btn" form="expenses_form" type="submit">
+						Submit
+					</button>
+				</div>
+
+			</form>
+		</div>
+	</div>
+
+
+
+	<div id="dropDownSelect1"></div>
+
+
+
+
+
+
+
+
+
+<!--===============================================================================================-->
+	<script src="{% static 'homepage/vendor1/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'homepage/vendor1/animsition/js/animsition.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'homepage/vendor1/bootstrap/js/popper.js' %}"></script>
+	<script src="{% static 'homepage/vendor1/bootstrap/js/bootstrap.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'homepage/vendor1/select2/select2.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'homepage/vendor1/daterangepicker/moment.min.js' %}"></script>
+	<script src="{% static 'homepage/vendor1/daterangepicker/daterangepicker.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'homepage/vendor1/countdowntime/countdowntime.js' %}"></script>
+<!--===============================================================================================-->
+	
+	
+<!--===============================================================================================-->
+	<script src="{% static 'homepage/js1/main.js' %}"></script>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+{% block title %}
+{% endblock %}
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <!-- CSS Files -->
+  <link href="{% static 'homepage/css/bootstrap.min.css' %}" rel="stylesheet" />
+  <link href="{% static 'homepage/css/now-ui-dashboard.css' %}" rel="stylesheet" />
+</head>
+
+<body class="">
+  <div class="wrapper ">
+    <div class="sidebar" data-color="yellow">
+      <!--
+        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
+    -->
+      <div class="logo">
+        <a href="/home" class="simple-text logo-normal">
+          <img src="{% static 'homepage/images/logo.png' %}">
+        </a>
+      </div>
+      <div class="sidebar-wrapper" id="sidebar-wrapper">
+        <ul class="nav">
+          <li class="active ">
+            <a href="/home">
+              <i class="now-ui-icons design_app"></i>
+              <p style="color: #FFB236; font-size: 14px; font-family: sans-serif;">Dashboard</p>
+            </a>
+          </li>
+          <li class="active">
+            <a href="/home/income_history">
+              <i class="now-ui-icons arrows-1_cloud-upload-94"></i>
+              <p style="color: #FFB236; font-size: 14px; font-family:sans-serif;">Income history</p>
+            </a>
+          </li>
+          <li class="active">
+            <a href="/home/expenses_history">
+              <i class="now-ui-icons arrows-1_cloud-download-93"></i>
+              <p style="color: #FFB236; font-size: 14px; font-family:sans-serif;">Expenses history</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main-panel" id="main-panel">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute">
+        <div class="container-fluid">
+          <div class="navbar-wrapper">
+            <div class="navbar-toggle">
+              <button type="button" class="navbar-toggler">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+              </button>
+            </div>
+            
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navigation">
+              <li class="nav-item dropdown" style="list-style-type: none;">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="now-ui-icons users_single-02"></i>
+                  <p>
+                    <span class="d-lg-none d-md-block">Account</span>
+                  </p>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink" style="background-color: white">
+                  <a class="dropdown-item" href="/settings">Settings</a>
+                  <a class="dropdown-item" href="/login">Logout</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- End Navbar -->
+      <div class="panel-header panel-header-sm">
+        
+
+      </div>
+
+      {% block content %}
+      {% endblock %}
+      <footer class="footer">
+        
+      </footer>
+    </div>
+  </div>
+  <!--   Core JS Files   -->
+  <script src="{% static 'homepage/js/jquery.min.js' %}"></script>
+  <script src="{% static 'homepage/js/popper.min.js' %}"></script>
+  <script src="{% static 'homepage/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'homepage/js/perfect-scrollbar.jquery.min.js' %}"></script>
+  <!--  Notifications Plugin    -->
+  <script src="{% static 'homepage/js/bootstrap-notify.js' %}"></script>
+  <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="{% static 'homepage/js/now-ui-dashboard.min.js' %}" type="text/javascript"></script>
+  
+</body>
+
+</html>

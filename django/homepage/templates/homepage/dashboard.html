@@ -1,0 +1,71 @@
+{% extends 'homepage/base.html' %}
+{% load static %}
+
+{% block title %}
+<title>Dashboard</title>
+{% endblock %}
+
+{% block content %}
+<div class="content">
+  <div class="row">
+    <!-- Your existing cards here -->
+
+    <div class="row" id="hackathon">
+      <div class="col-md-6">
+        <div class="card card-tasks">
+          <div class="card-header">
+            <h4 class="card-title" style=" font-family: cursive;">Earning</h4>
+          </div>
+          <div class="card-body">
+            <div class="table-full-width table-responsive">
+              <div class="basic">
+                {% include "homepage/earning.html" %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title" style=" font-family: cursive;">Spending</h4>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <div class="basic">
+                {% include "homepage/expenses.html" %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Prompt Form and Response Display -->
+    <div class="row" id="openai-prompt">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title" style=" font-family: cursive;">AI Assistant</h4>
+          </div>
+          <div class="card-body">
+            <form method="post">
+              {% csrf_token %}
+              <div class="form-group">
+                <label for="prompt">Enter your prompt:</label>
+                <input type="text" class="form-control" id="prompt" name="prompt" required>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            {% if ai_response %}
+            <div class="alert alert-info mt-3">
+              <strong>Response:</strong> {{ ai_response }}
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

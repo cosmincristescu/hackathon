@@ -1,0 +1,43 @@
+{% extends 'homepage/base.html' %}
+
+{% block title %}
+<title>Income History</title>
+{% endblock %}
+
+{% block content %}
+<div class="card-body">
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead class=" text-primary">
+                      <th style="text-align:center;">
+                        Earned
+                      </th>
+
+                      <th style="text-align:center;">
+                        Date
+                      </th>
+
+                      <th style="text-align:center; width:5%">
+                        Amount
+                      </th>
+
+                      <th style="text-align:center;">
+                        Observations
+                      </th>
+                    </thead>
+
+                    <tbody>
+                      
+                      {% for what,date,amount,message in fusion %}
+                      <tr>
+                        <td style="text-align:center; width: 20%"> {{ what }} </td>
+                        <td style="text-align:center; width: 20%"> {{ date }} </td>
+                        <td style="text-align:center;"> ${{ amount }} </td>
+                        <td style="text-align:center;"> {{ message }} </td>
+                      </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+{% endblock %}

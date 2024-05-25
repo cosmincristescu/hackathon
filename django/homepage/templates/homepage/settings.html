@@ -1,0 +1,62 @@
+{% extends 'homepage/base.html' %}
+{% load static %}
+
+{% block title %}
+<title>
+  Settings
+</title>
+{% endblock %}
+
+{% block content %}
+<div class="content">
+        
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card  card-tasks">
+              <div class="card-header ">
+                
+                <h4 class="card-title" style=" font-family: cursive; text-align: center;">Change password</h4>
+              </div>
+              <div class="card-body ">
+                <div class="table-full-width table-responsive">
+
+                  <div class="basic">
+                      {% include "homepage/changepassword.html" %}  
+                  </div>
+                </div>
+              </div>
+           </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-header">
+                
+                <h4 class="card-title" style=" font-family: cursive; text-align: center;">Currency</h4>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  
+                  <div class="basic">
+                    <form id="changecurrency_form" method="POST">
+                      {% csrf_token %}
+                      <div style="text-align: center; margin-bottom: 20px;">
+                        <input type="radio" name="currency" value="dollar">  $<br>
+                        <input type="radio" name="currency" value="pound">  &#8356;<br>
+                        <input type="radio" name="currency" value="euro">  &#8364;<br>  
+                      </div> 
+                    </form>
+                    
+                  </div>
+                  <div class="container-contact100-form-btn">
+                    <button class="contact100-form-btn" form="changecurrency_form" type="submit">
+                      Submit
+                    </button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+{% endblock %}
